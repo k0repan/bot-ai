@@ -22,7 +22,7 @@ def start(msg: Message):
 
 @bot.message_handler(content_types=['text'])
 def get_text(msg: Message):
-    print("Called Query")
+    print(f"Called Query by {msg.from_user.first_name}")
     answer = api.search(msg.text)
     bot.send_message(msg.from_user.id, answer)
 
